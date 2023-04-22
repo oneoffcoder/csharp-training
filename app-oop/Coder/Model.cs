@@ -1,11 +1,11 @@
 namespace Coder.Model
 {
-    public class Human
+    public class HumanClazz
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public Human(string firstName, string lastName)
+        public HumanClazz(string firstName, string lastName)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -18,12 +18,12 @@ namespace Coder.Model
 
         public override bool Equals(object? obj)
         {
-            if (obj is null || obj.GetType() != typeof(Human))
+            if (obj is null || obj.GetType() != typeof(HumanClazz))
             {
                 return false;
             }
 
-            var that = (Human)obj;
+            var that = (HumanClazz)obj;
             return this.FirstName.Equals(that.FirstName) &&
                 this.LastName.Equals(that.LastName);
         }
@@ -33,6 +33,18 @@ namespace Coder.Model
             return $"{this.FirstName} {this.LastName}";
         }
     }
+
+    public struct HumanStruct {
+        public string FirstName;
+        public string LastName;
+
+        public HumanStruct(string firstName, string lastName) {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+        }
+    }
+
+    public record HumanRecord(string FirstName, string LastName);
 
     public record Pet(string Name, string Sound);
 }
