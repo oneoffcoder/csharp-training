@@ -12,9 +12,19 @@ public class CircleBehaviourScript : MonoBehaviour
     {
         h = Random.Range(0.0f, 1.0f) > 0.5f ? -1.0f : 1.0f;
         v = Random.Range(0.0f, 1.0f) > 0.5f ? -1.0f : 1.0f;
+
         float x = Random.Range(-10.0f, 10.0f);
         float y = Random.Range(-5.0f, 5.0f);
+
         gameObject.transform.position = new Vector2(x, y);
+
+        float r = Random.Range(0.0f, 1.0f);
+        float g = Random.Range(0.0f, 1.0f);
+        float b = Random.Range(0.0f, 1.0f);
+        float alpha = Random.Range(0.5f, 1.0f);
+        Color color = new Color(r, g, b, alpha);
+
+        gameObject.GetComponent<Renderer>().material.color = color;
 
         Debug.Log($"{Screen.width}, {Screen.height}");
     }
