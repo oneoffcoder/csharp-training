@@ -16,7 +16,7 @@ public class CircleBehaviourScript : MonoBehaviour
 
             Debug.Log($"x={x}, y={y}, z={z}");
             
-            Instantiate(circle, new Vector3(x, y, z), Quaternion.identity);
+            // Instantiate(circle, new Vector3(x, y, z), Quaternion.identity);
         }
     }
 
