@@ -10,6 +10,8 @@ public class CircleBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        h = Random.Range(0.0f, 1.0f) > 0.5f ? -1.0f : 1.0f;
+        v = Random.Range(0.0f, 1.0f) > 0.5f ? -1.0f : 1.0f;
         float x = Random.Range(-10.0f, 10.0f);
         float y = Random.Range(-5.0f, 5.0f);
         gameObject.transform.position = new Vector2(x, y);
