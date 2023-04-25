@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircleBehaviourScript : MonoBehaviour
+public class PrefabCircle : MonoBehaviour
 {
     public GameObject circle;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +15,7 @@ public class CircleBehaviourScript : MonoBehaviour
 
             Debug.Log($"x={x}, y={y}, z={z}");
             
-            // Instantiate(circle, new Vector3(x, y, z), Quaternion.identity);
+            Instantiate(circle, new Vector3(x, y, z), Quaternion.identity);
         }
     }
 
