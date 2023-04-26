@@ -6,6 +6,7 @@ public class CircleBehaviourScript : MonoBehaviour
 {
     private Camera _camera;
     public float speed = 0.005f;
+    public AudioSource ding;
     private float _h = 1.0f;
     private float _v = 1.0f;
     private bool _flip = false;
@@ -15,6 +16,7 @@ public class CircleBehaviourScript : MonoBehaviour
         _camera = Camera.main;
         _h = Random.Range(0.0f, 1.0f) > 0.5f ? -1.0f : 1.0f;
         _v = Random.Range(0.0f, 1.0f) > 0.5f ? -1.0f : 1.0f;
+        ding = GetComponent<AudioSource>();
 
         var x = Random.Range(-10.0f, 10.0f);
         var y = Random.Range(-5.0f, 5.0f);
@@ -77,5 +79,6 @@ public class CircleBehaviourScript : MonoBehaviour
         var that = collision.collider.GetComponent<CircleBehaviourScript>();
         that.Flip();
         this.Flip();
+        ding.Play();
     }
 }
