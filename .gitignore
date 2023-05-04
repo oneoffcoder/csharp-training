@@ -1,3 +1,6 @@
+.vs
+.vsconfig
+.idea
 bin
 obj
 .vscode
