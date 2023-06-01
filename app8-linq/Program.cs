@@ -2,6 +2,79 @@
 {
     private static void Main(string[] args)
     {
+        // create an array of the names (first and last only)
+        // of the first 10 presidents
+        // what is the lengths of each of their name?
+        // what is the sum of the lengths of their name?
+        // use LINQ to find the president with the shortest name
+        // use LINQ to find the president with the longest name
+
+        string[] presidents = {
+            "george washington", "john adams", 
+            "thomas jefferson", "james madison",
+            "james monroe", "john adams",
+            "andrew jackson", "martin van buren",
+            "william harrison", "john tyler"
+        };
+
+        // name lengths
+        presidents
+            .ToList()
+            .ForEach(p => Console.WriteLine($"{p}, {p.Length}"));
+        Console.WriteLine(new String('-', 15));
+
+        // sum
+        var n = presidents
+            .ToList()
+            .Select(p => p.Length)
+            .Sum();
+        Console.WriteLine($"sum of lengths = {n}");
+        Console.WriteLine(new String('-', 15));
+
+        // shortest
+        var shortest = presidents
+            .ToList()
+            .OrderBy(p => p.Length)
+            .First();
+        var longest = presidents
+            .ToList()
+            .OrderByDescending(p => p.Length)
+            .First();
+        Console.WriteLine($"shortest = {shortest}, longest = {longest}");
+        Console.WriteLine(new String('-', 15));
+
+        // print the names from shortest length to longest
+        presidents
+            .ToList()
+            .OrderBy(p => p.Length)
+            .ToList()
+            .ForEach(p => Console.WriteLine(p));
+        Console.WriteLine(new String('-', 15));
+
+        // print the names from longest length to shortest
+        presidents
+            .ToList()
+            .OrderByDescending(p => p.Length)
+            .ToList()
+            .ForEach(p => Console.WriteLine($"*{p}"));
+    }
+
+    static void DoElementExerices() {
+        // create an array of the first 10 atomic elements
+        // what is the sum of the lengths of the first 10 atomic elements' names?
+        string[] elements = {
+            "Hydrogen", "Helium", "Lithium",
+            "Boron", "Carbon"
+        };
+
+        var sum = elements
+            .ToList()
+            .Select(e => e.Length)
+            .Sum();
+        Console.WriteLine($"sum is {sum}");
+    }
+
+    static void DoPlanetExercise() {
         // create an array of the 9 planet names
         string[] planets = {
             "mercury", "venus", "earth",
