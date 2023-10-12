@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SphereBehavior : MonoBehaviour
+public class CubeBehavior : MonoBehaviour
 {
     private Material sphereMaterial;
     public float radius = 2.0f;
     public float speed = 2.0f;
     private Vector3 centerPosition;
     private float angle = 0.0f;
-    private float rRand = 0.5f;
-    private float gRand = 0.8f;
-    private float bRand = 0.2f;
-
+    private float rRand = 0.25f;
+    private float gRand = 0.14f;
+    private float bRand = 0.88f;
+    // Start is called before the first frame update
     void Start()
     {
         centerPosition = transform.position;
